@@ -16,7 +16,7 @@ class Menu:
         pygame.mixer.music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(70, "Corre CLT", COLOR_ORANGE, ((WIN_WIDTH / 2), 70))
+            self.menu_text(70, "Corre CLT", COLOR_WHITE, ((WIN_WIDTH / 2), 70))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:

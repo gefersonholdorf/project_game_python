@@ -2,7 +2,7 @@ from code.Entity import Entity
 import pygame
 from code.Const import ENTITY_SPEED, WIN_WIDTH, WIN_HEIGHT
 
-class Enemy(Entity):
+class Bonus(Entity):
     def __init__(self, name: str, position: tuple):
         super().__init__(name, position)
         self.score = 0
@@ -10,5 +10,4 @@ class Enemy(Entity):
     
     def move(self, ):
         self.rect.centerx -= ENTITY_SPEED[self.name]
-        
 
