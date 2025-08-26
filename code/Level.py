@@ -44,6 +44,19 @@ class Level:
                     self.timeout -= 100
                     if self.timeout <= 0:
                         return self.menu_option_return
+                found_player = False
+                for entity in self.entity_list:
+                    if entity.name == 'Player':
+                        found_player = True
+                        break
+                if not found_player:
+                    self.level_text(80, 'GAME OVER', COLOR_WHITE, ((WIN_WIDTH / 2), WIN_HEIGHT / 2))
+                    pygame.mixer.music.stop()
+                    pygame.mixer.music.load('./asset/game-over.mp3')
+                    pygame.mixer.music.play()
+                    pygame.display.flip()
+                    pygame.time.delay(3000)
+                    return self.menu_option_return
 
             self.level_text(24, f'{self.name} - Timeout: { self.timeout / 1000 :.1f}s', COLOR_WHITE, (120, 20))
             self.level_text(24, f'fps: {clock.get_fps() :.0f}', COLOR_WHITE, (30, WIN_HEIGHT - 20))

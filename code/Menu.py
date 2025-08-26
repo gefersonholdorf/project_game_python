@@ -1,7 +1,7 @@
 import pygame
 from pygame import Surface, Rect
 import pygame.font
-from code.Const import WIN_WIDTH, COLOR_WHITE, COLOR_ORANGE, MENU_OPTION
+from code.Const import WIN_WIDTH, COLOR_WHITE, COLOR_ORANGE, MENU_OPTION, COLOR_EMERALDA
 
 class Menu:
     def __init__(self, window):
@@ -16,13 +16,13 @@ class Menu:
         pygame.mixer.music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(70, "Corre CLT", COLOR_WHITE, ((WIN_WIDTH / 2), 70))
+            self.menu_text(100, "Corre CLT", COLOR_WHITE, ((WIN_WIDTH / 2), 70))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(40, MENU_OPTION[i], COLOR_ORANGE, ((WIN_WIDTH / 2), 200 + 40 * i)) 
+                    self.menu_text(70, MENU_OPTION[i], COLOR_EMERALDA, ((WIN_WIDTH / 2), 220 + 60 * i)) 
                 else:
-                    self.menu_text(40, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH / 2), 200 + 40 * i)) 
+                    self.menu_text(70, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH / 2), 220 + 60 * i)) 
 
             # Check for all events
             for event in pygame.event.get(): 
